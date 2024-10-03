@@ -1,6 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.apollo)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
+    id("kotlin-kapt")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.iucoding.countriesgraphql.apollo.service")
+    }
 }
 
 android {
@@ -50,7 +60,7 @@ android {
 }
 
 dependencies {
-
+    // Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -66,4 +76,24 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Ksp
+    compileOnly(libs.ksp)
+
+    // Apollo GraphQL
+    implementation(libs.apollo)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    kapt(libs.androidx.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+     // ViewModel compose
+    implementation(libs.viewmodel.compose)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
