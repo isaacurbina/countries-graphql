@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CountriesGraphQLTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TODO("continue tutorial on 5:18 https://www.youtube.com/watch?v=ME3LH2bib3g")
+                    TODO("continue tutorial on 13:48 https://www.youtube.com/watch?v=ME3LH2bib3g")
                 }
             }
         }
