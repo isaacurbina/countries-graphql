@@ -8,7 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.iucoding.countriesgraphql.domain.model.SimpleCountry
@@ -40,7 +40,7 @@ fun CountryItem(
     }
 }
 
-@PreviewScreenSizes
+@Preview
 @Composable
 private fun CountryItemPreview() {
     CountryItem(
