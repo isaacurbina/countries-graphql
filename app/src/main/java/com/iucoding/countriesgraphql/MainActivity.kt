@@ -22,7 +22,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CountriesGraphQLTheme {
-                val viewModel = hiltViewModel<CountriesViewModel>()
+                val viewModel = hiltViewModel<CountriesViewModel>().apply {
+                    init()
+                }
                 val state by viewModel.state.collectAsState()
                 CountriesScreen(
                     state = state,
