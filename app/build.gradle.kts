@@ -59,6 +59,10 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 dependencies {
     // Android
     implementation(libs.androidx.core.ktx)
@@ -91,6 +95,17 @@ dependencies {
 
     // ViewModel compose
     implementation(libs.viewmodel.compose)
+
+    // Unit tests
+    testImplementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.junit5.api)
+    testImplementation(libs.junit5.params)
+    testRuntimeOnly(libs.junit5.engine)
+    testImplementation(libs.junit5.android.test.compose)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.assertk)
+    testImplementation(libs.mockk)
 }
 
 // Allow references to generated code

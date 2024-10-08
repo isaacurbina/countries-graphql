@@ -21,7 +21,7 @@ class CountriesViewModel @Inject constructor(
     private val _state = MutableStateFlow(CountriesState())
     val state = _state.asStateFlow()
 
-    init {
+    fun init() {
         viewModelScope.launch {
             _state.update {
                 it.copy(isLoading = true)
